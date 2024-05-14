@@ -1,0 +1,652 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+.laptop{
+    display: none;
+}
+.cake header{
+    height: 110px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+}
+.cake header img{
+    margin: 20px 0px 5px 30px;
+}
+.cake header .nav-open{
+    display: flex;
+    justify-content: right;
+    color: black;
+    background-color: #e5bf4a;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    /* border-block: 2px solid #e5bf4a; */
+}
+.cake header .nav-open .icon{
+    font-size: 20px;
+    margin-left: 5px;
+}
+.cake header .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e5bf4a;
+    width: 100%;
+    position: absolute;
+    top: 105px;
+    padding: 0px 10px 30px 10px;
+}
+.cake header .nav-links .link{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 10px;
+}
+.cake header .nav-links .link:hover{
+    border-radius: 8px;
+    background-color: white;
+    
+}
+.cake header .nav-links .toggle{
+    padding-block: 15px;
+}
+.cake header .nav-links .toggle .input{
+    visibility: hidden;
+}
+.cake header .nav-links .toggle .label{
+    position: absolute;
+    width: 50px;
+    height: 24px;
+    background-color: lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.cake header .nav-links .toggle .circle{
+    width: 20px;
+    background-color: white;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    position: absolute;
+
+    animation: toggleOff 0.4s linear forwards;
+}
+.cake header .nav-links .toggle .input:checked + .label{
+    background-color: white;
+}
+.cake header .nav-links .toggle .input:checked + .label .circle{
+    animation: toggleOn 0.4s linear forwards;
+    background-color: black;
+}
+
+
+/* ANIMATION STARTS */
+@keyframes toggleOn {
+    0%{
+        transform: translate(4px);
+    }
+    100%{
+        transform: translate(28px);
+    }
+}
+@keyframes toggleOff {
+    0%{
+        transform: translate(28px);
+    }
+    100%{
+        transform: translate(4px);
+    }
+}
+@keyframes slideup {
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* ANIMATION ENDS */
+
+.cake .banner{
+    height: 500px;
+    background: url(img/pexels-darko-trajković-10899790.jpg) no-repeat bottom/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-inline: 10px;
+    border: 1px solid #e5bf4a;
+
+    animation: appear 1s ease-in-out;
+}
+.cake .banner h1{
+    font-size: 35px;
+    color: white;
+    font-weight: 100;
+}
+.cake .banner button{
+    width: 180px;
+    font-weight: bold;
+    font-size: 14.5px;
+    padding-block: 25px;
+    text-transform: uppercase;
+    background-color: #e5bf4a;
+    border: 2px solid #e5bf4a;
+}
+.cake .banner button:hover{
+    background-color: rgba(5, 5, 5, 0.253);
+    color: #e5bf4a;
+    border: 2px solid #e5bf4a;
+    transition: all 0.5s ease-in-out;
+}
+.cake .schilers{
+    margin-block: 80px;
+    margin-inline: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cake .schilers .top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.cake .schilers .top h1{
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 23px;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.cake .schilers .top .line{
+    background-color: #e5bf4a;
+    width: 100px;
+    height: 3px;
+}
+.cake .schilers .mid{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.cake .schilers .mid h2{
+    color: #e5be4abb;
+    font-size: 23px;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cake .schilers .mid p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(255, 255, 255, 0.842);
+    font-size: 18px;
+    line-height: 25px;
+}
+.cake .schilers .mid img{
+    width: 100%;
+}
+.scroll-up{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: none;
+    color: white;
+    border-radius: 50%;
+    background-color: #e5bf4a;
+    cursor: pointer;
+}
+.scroll-up span{
+    position: absolute;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    
+    animation: slideup 3s infinite ease-in-out;
+}
+
+
+
+.slideshow-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    top: 10px;
+}
+.slideshow-container .card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding-inline: 25px;
+    position: absolute;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+.slideshow-container .card.active {
+	opacity: 1;
+}
+.slideshow-container .card h4{
+    font-size: 20px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.685);
+}
+.slideshow-container .card p{
+    color: #e5bf4a;
+    font-size: 20px;
+}
+.slideshow-container .card .item{
+    width: 100%;
+    height: 280px;
+}
+.slideshow-container .card .one{
+    background: url(img/pexels-ehioma-osih-10319189.jpg) no-repeat center/cover;
+}
+.slideshow-container .card .two{
+    background: url(img/items1.jpg.webp) no-repeat center/cover;
+}
+.slideshow-container .card .three{
+    background: url(img/items2.jpg.webp) no-repeat top/cover;
+}
+.slideshow-container .card .four{
+    background: url(img/items3.jpg.webp) no-repeat center/cover;
+}
+.slideshow-container .card .five{
+    background: url(img/pexels-dima-valkov-3740196.jpg) no-repeat bottom/cover;
+}
+.slideshow-container .card .item .cart{
+    margin-top: 210px;
+    display: none;
+    height: 70px;
+    background-color: #e5be4ab6;
+
+}
+.slideshow-container .card:hover .item .cart{
+    display: block;
+    
+}
+
+.video{
+    margin-top: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background: url(img/pexels-alexia-tyriakidou-15511436.jpg) no-repeat bottom/cover;
+    visibility: 3px;
+}
+.video .vid{
+    background-color: #e5bf4a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px black,
+                0 0 0 3px #e5bf4a,
+                0 0 0 40px #e5be4a41;
+}
+.video .vid:hover{
+    background-color: white;
+}
+.video .vid .play{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7px;
+}
+.video .vid .play .fa-play{ 
+    color: rgb(27, 16, 11);
+    font-size: 40px;
+}
+.food{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    background: url(img/pexels-skyler-ewing-9295346.jpg) no-repeat right;
+}
+.food h2{
+    text-align: center;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.74);
+}
+.food .comment{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 40px;
+    border-block: 1px solid rgba(255, 255, 255, 0.377);
+    background-color: rgba(0, 0, 0, 0.425);
+}
+.food .comment span{
+    font-size: 25px;
+    color: #e5bf4a;
+}
+.food .comment p{
+    font-size: 18px;
+    line-height: 25px;
+}
+.food .comment .details{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.food .comment .details img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.food .comment .details h3{
+    font-weight: 100;
+}
+.blog{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.blog .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+}
+.blog .title h2{
+    font-weight: 100;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+}
+.blog .title button{
+    padding: 20px 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #e5bf4a;
+    border: 1px solid #e5bf4a;
+}
+.blog .title button:hover{
+    border: 1px solid #e5bf4a;
+    background-color: black;
+    color: #e5bf4a;
+}
+.blog .content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.blog .content .first{
+    margin-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.192);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.192);
+}
+.blog .content .second{
+    margin-left: 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.192);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.192);
+}
+.blog .content img{
+    width: 100%;
+}
+.blog .content .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.blog .content .text h3{
+    color: #e5bf4a;
+    font-size: 25px;
+}
+.blog .content .text p{
+    color: rgba(255, 255, 255, 0.788);
+    line-height: 22px;
+}
+.blog .content .text a{
+    color: #e6ad02;
+    width: 72px;
+    border-bottom: 2px solid #e5bf4a;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-block: 8px;
+}
+.blog .content .text a:hover{
+    width: 81px;
+    letter-spacing: 1px;
+    transition: all 0.5s ease-in-out;
+}
+.insta{
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.insta h2{
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -5px;
+}
+.insta button{
+    width: 140px;
+    padding-block: 20px;
+    font-size: 15px;
+    background-color: black;
+    color: #e5bf4a;
+    border: 1px solid #e5bf4a;
+}
+.insta button .fa-instagram{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.insta picture{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.insta picture img{
+    width: 100%;
+    height: 300px;
+}
+footer{
+    margin-top: 100px;
+    padding-inline: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+footer .b-logo .navigate{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 10px 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.397);
+}
+footer .b-logo .navigate a{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+footer .b-logo p{
+    margin-top: 40px;
+    line-height: 28px;
+}
+footer .social{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+footer .social a button{
+    padding: 20px 35px;
+    background-color: black;
+    border: 1px solid #e5bf4a;
+}
+footer .social a button:hover{
+    background: linear-gradient(60deg, #e5bf4a, rgba(0, 0, 0, 0.432), #e5bf4a);
+    transition: all 0.5s ease-in-out;
+}
+footer .social a button .icon{
+    margin-right: 10px;
+}
+footer .address{
+    padding-block: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.637);
+}
+footer .address div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+footer .address .locate .icon{
+    transform: rotate(40deg);
+}
+footer .address div .icon{
+    position: relative;
+    left: -160px;
+    font-size: 30px;
+}
+footer .address div h3{
+    color: #e5bf4a;
+    font-size: 25px;
+}
+footer .end{
+    text-align: center;
+    padding-block: 10px;
+}
+footer .end span{
+    color: blue;
+    font-size: 21px;
+}
+
+/* cake page2 */
+.cake .banner2{
+    height: 350px;
+    background: url(img/pexels-skyler-ewing-9295346.jpg) no-repeat bottom/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 70px;
+    padding-inline: 10px;
+    border: 1px solid #e5bf4a;
+}
+.cake .banner2 h1{
+    font-size: 35px;
+    color: white;
+    font-weight: 100;
+}
+.product{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 80px;
+}
+.product .card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-inline: 25px;
+	transition: opacity 1s ease-in-out;
+}
+.product .card h4{
+    font-size: 20px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.685);
+}
+.product .card p{
+    color: #e5bf4a;
+    font-size: 20px;
+}
+.product .card .item{
+    width: 100%;
+    height: 280px;
+}
+.product .card .one{
+    background: url(img/pexels-ehioma-osih-10319189.jpg) no-repeat center/cover;
+}
+.product .card .two{
+    background: url(img/items1.jpg.webp) no-repeat center/cover;
+}
+.product .card .three{
+    background: url(img/items2.jpg.webp) no-repeat top/cover;
+}
+.product .card .four{
+    background: url(img/items3.jpg.webp) no-repeat center/cover;
+}
+.product .card .five{
+    background: url(img/pexels-dima-valkov-3740196.jpg) no-repeat bottom/cover;
+}
+.product .card .six{
+    background: url(img/items4.jpg.webp) no-repeat bottom/cover;
+}
+.product .card .seven{
+    background: url(img/items5.jpg.webp) no-repeat bottom/cover;
+}
+.product .card .eight{
+    background: url(img/items6.jpg.webp) no-repeat bottom/cover;
+}
+.product .card .item .cart{
+    margin-top: 210px;
+    display: none;
+}
+
+
+@media only screen and (min-width: 1200px){
+    header{
+        display: none;
+    }
+    .laptop{
+        display: block;
+        padding: 80px;
+    }
+    .laptop .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
